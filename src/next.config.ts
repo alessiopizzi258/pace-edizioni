@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
     /* IL BYPASS TATTICO: Disattiva l'ottimizzazione locale per evitare i timeout, ma la mantiene attiva in produzione */
     unoptimized: process.env.NODE_ENV === 'development',
@@ -19,4 +20,4 @@ const nextConfig: NextConfig = {
   compress: true,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
