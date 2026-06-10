@@ -1,0 +1,11 @@
+// scripts/tsconfig.json
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2020",
+    "strict": false,
+    "moduleResolution": "node"
+  }
+}

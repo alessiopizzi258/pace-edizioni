@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pace Edizioni — Segreteria Direzionale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Rimuove lo sfondo giallo dell'autofill sui browser basati su WebKit */
+        input:-webkit-autofill, textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #F4F1EA inset !important;
+            -webkit-text-fill-color: #1A1918 !important;
+        }
+    </style>
+</head>
+<body class="bg-[#F4F1EA] text-[#1A1918] min-h-screen flex flex-col p-6 md:p-12 lg:p-24 selection:bg-[#1A1918] selection:text-[#F4F1EA]">
+    
+    <header class="mb-16 md:mb-32">
+        <span class="font-mono text-[10px] uppercase tracking-[0.4em] text-[#8C877D] border-b border-[#E2DFD8] pb-4 block max-w-fit">
+            Pace Edizioni
+        </span>
+    </header>
+    
+    <main class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start max-w-7xl mx-auto w-full flex-1">
+        
+        <div class="lg:col-span-6 flex flex-col gap-12">
+            <div>
+                <span class="font-playfair text-[#1A1918] text-5xl mb-6 block">—</span>
+                <h1 class="font-playfair text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-[0.9] mb-8 text-[#1A1918]">
+                    Infrastruttura in<br>
+                    <span class="italic text-[#8C877D]">allestimento.</span>
+                </h1>
+                <p class="font-inter font-light text-lg md:text-xl text-[#5C5852] leading-relaxed max-w-md">
+                    Stiamo ingegnerizzando il nuovo ecosistema digitale. La piattaforma sarà operativa a breve. 
+                    Le acquisizioni e le valutazioni dei manoscritti proseguono con regolarità.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 pt-8 border-t border-[#E2DFD8]">
+                <span class="font-mono text-[9px] uppercase tracking-[0.3em] text-[#8C877D]">Direzione & Contatti Diretti</span>
+                
+                <div>
+                    <h3 class="font-playfair text-xl text-[#1A1918] mb-1">Email Direzionale</h3>
+                    <a href="mailto:pacedizioni@pacedizioni.it" class="font-inter font-light text-[#5C5852] hover:text-[#1A1918] transition-colors">
+                        pacedizioni@pacedizioni.it
+                    </a>
+                </div>
+                
+                <div>
+                    <h3 class="font-playfair text-xl text-[#1A1918] mb-1">Linea Telefonica</h3>
+                    <a href="tel:+393881120085" class="font-inter font-light text-[#5C5852] hover:text-[#1A1918] transition-colors">
+                        +39 388 1120085
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="font-playfair text-xl text-[#1A1918] mb-1">Sede Operativa</h3>
+                    <p class="font-inter font-light text-[#5C5852]">
+                        Via San Leonardo, 72<br>89015 Palmi (RC) — Italia
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-[#EAE5DA] p-8 md:p-12 border border-[#E2DFD8]">
+            <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#8C877D] block mb-8">
+                Invia una Comunicazione
+            </span>
+            
+            <p class="font-inter font-light text-sm text-[#5C5852] leading-relaxed mb-10">
+                Pace Edizioni valuta esclusivamente opere di assoluto spessore. L'intero rischio d'impresa è a nostro carico, non richiediamo alcun contributo all'autore. Compila il form per inoltrare la tua richiesta alla Segreteria.
+            </p>
+
+            <form action="mailto:pacedizioni@pacedizioni.it" method="POST" enctype="text/plain" class="flex flex-col gap-8">
+                
+                <div class="flex flex-col">
+                    <label for="name" class="font-mono text-[9px] uppercase tracking-widest text-[#8C877D] mb-2">Nome e Cognome / Qualifica</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="Nome" 
+                        required
+                        class="bg-transparent border-b border-[#CFCAC0] py-2 font-inter text-[#1A1918] placeholder-[#A69E93] focus:outline-none focus:border-[#1A1918] transition-colors"
+                        placeholder="Es. Mario Rossi — Autore"
+                    >
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="email" class="font-mono text-[9px] uppercase tracking-widest text-[#8C877D] mb-2">Indirizzo Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="Email" 
+                        required
+                        class="bg-transparent border-b border-[#CFCAC0] py-2 font-inter text-[#1A1918] placeholder-[#A69E93] focus:outline-none focus:border-[#1A1918] transition-colors"
+                        placeholder="nome@dominio.com"
+                    >
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="message" class="font-mono text-[9px] uppercase tracking-widest text-[#8C877D] mb-2">Corpo del Messaggio</label>
+                    <textarea 
+                        id="message" 
+                        name="Messaggio" 
+                        rows="4" 
+                        required
+                        class="bg-transparent border-b border-[#CFCAC0] py-2 font-inter text-[#1A1918] placeholder-[#A69E93] focus:outline-none focus:border-[#1A1918] transition-colors resize-none"
+                        placeholder="Descrivi brevemente l'oggetto della tua comunicazione..."
+                    ></textarea>
+                </div>
+
+                <button 
+                    type="submit"
+                    class="mt-4 bg-[#1A1918] text-[#F4F1EA] font-mono text-[10px] uppercase tracking-[0.3em] py-5 px-8 hover:bg-[#3A3936] transition-colors text-center w-full"
+                >
+                    Inoltra alla Segreteria
+                </button>
+
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="mt-24 pt-8 border-t border-[#E2DFD8] flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="font-mono text-[9px] uppercase tracking-[0.3em] text-[#8C877D]">
+            © 2026 Pace Edizioni — P.IVA 03228120808
+        </span>
+    </footer>
+
+</body>
+</html>
