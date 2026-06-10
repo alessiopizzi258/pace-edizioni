@@ -1,6 +1,6 @@
 // app/admin/auto-fill/page.tsx
 'use client';
-
+export const dynamic = 'force-dynamic';
 import { useEffect, useState } from 'react';
 import { getAuthors, getBooks, updateAuthor, updateBook, Author, Book } from '@/lib/api';
 import Link from 'next/link';

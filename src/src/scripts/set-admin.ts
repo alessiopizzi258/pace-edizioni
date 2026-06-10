@@ -1,6 +1,7 @@
-// scripts/set-admin.ts
+// src/scripts/set-admin.ts
 import * as admin from 'firebase-admin';
 
+// Utilizziamo le variabili d'ambiente fornite dal sistema, non un file locale
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID,
