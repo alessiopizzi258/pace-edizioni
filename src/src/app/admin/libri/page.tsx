@@ -220,11 +220,26 @@ export default function AdminBooksPage() {
         const snapshot = await uploadBytes(fileRef, coverFile);
         finalCoverUrl = await getDownloadURL(snapshot.ref);
       }
-      const bookData = { ...formData, coverUrl: finalCoverUrl };
-      if (editingBook) await updateBook(editingBook.id, bookData);
-      else await createBook(bookData as Omit<Book, 'id'>);
-      closePanels(); fetchData();
-    } catch { setFormError("Errore durante il salvataggio."); } 
+
+      // Protezione contro il blocco NaN di Firestore
+      const safePrice = isNaN(formData.price) ? 0 : formData.price;
+      
+      const bookData = { ...formData, price: safePrice, coverUrl: finalCoverUrl };
+      
+      if (editingBook) {
+        await updateBook(editingBook.id, bookData);
+      } else {
+        await createBook(bookData as Omit<Book, 'id'>);
+      }
+      
+      closePanels(); 
+      fetchData();
+    } catch (error: any) { 
+      // DISINTEGRIAMO IL SILENT FAILURE: Costringiamo l'errore a manifestarsi
+      console.error("ERRORE CRITICO FIREBASE:", error);
+      alert(`Blocco di Sistema: ${error.message || "Errore sconosciuto"}`);
+      setFormError(error.message || "Errore durante il salvataggio."); 
+    } 
     finally { setSubmitting(false); }
   };
 
